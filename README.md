@@ -6,6 +6,6 @@
 NPM
 
 # How To Start
-1- Run the API.
-2- Route to Angular Project and type "npm install" from terminal.
-3- After install finish type "ng serve" to run Angular Project.
+* Run the API.
+* Route to Angular Project and type "npm install" from terminal.
+* After install finish type "ng serve" to run Angular Project.
