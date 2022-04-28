@@ -19,6 +19,7 @@ public class ExceptionMiddleware
     }
     catch (Exception ex)
     {
+      //Caching exception and only returns exception message, log the stack trace etc. This can be supported with Kibana, Elastic Search
       httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
       await httpContext.Response.WriteAsJsonAsync(new { message = ex.Message });
       _logger.LogError(ex, "Exception captured");

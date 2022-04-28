@@ -1,0 +1,22 @@
+<h1 class="table-headers">Upload</h1>
+<div id="uploader" >
+    <input type="file" #fileUpload id="fileUpload" (change)="addFile($event)" style="display: none;" [accept]="fileTypeAccept" >
+    <div class="upload-table" (dblclick)="fileUpload.click()">
+        <div class="splash-text">Double Click To Upload A File</div>
+        <div class="splash-overlay" [hidden]="!splash">DROP A FILE HERE TO UPLOAD</div>
+        <div *ngFor="let item of uploadFiles; let i = index">
+            <div class="d-flex justify-content-between ">
+                <div class="file-name align-self-center" [title]="item.fileInfo.name" [id]="item.fileInfo.name">
+                    {{item.fileInfo.name}}
+                </div>
+                <div>
+                    <i class="spinner-border" title="Uploading" [hidden]="!item.isUploading"></i>
+                    <i class="bi bi-upload icon-button" role="button" title="Upload" [hidden]="item.isUploaded || item.isUploading" (click)="uploadFile(i)"></i>
+                    <i class="bi bi-check2 icon-button" title="Uploaded" [hidden]="!item.isUploaded"></i>
+                    <i class="bi bi-trash icon-button" role="button" title="Delete" (click)="deleteFile(i)"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

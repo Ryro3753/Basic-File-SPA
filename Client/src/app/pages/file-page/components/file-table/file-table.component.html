@@ -1,0 +1,42 @@
+<h1 class="table-headers">Files</h1>
+<div id="files">
+    <div class="files-table">
+        <div class="nav nav-tabs type-bar">
+            <div *ngFor="let item of $fileTypes; let i = index">
+                <button class="btn btn-block type-button" [id]="item.type" [ngClass]="{'clicked': clickedTab == i}"
+                    [innerText]="item.type" (click)="changeTab(i)"></button>
+            </div>
+        </div>
+        <div id="infinite-table" *ngIf="clickedTab != -1">
+            <table>
+                <tr style="border-bottom: solid 5px darkgray;">
+                    <th>Name</th>
+                    <th>File Size</th>
+                    <th>Upload Date</th>
+                    <th></th>
+                </tr>
+                <tbody >
+                    <tr *ngFor="let item of filteredFiles" class="files-content">
+                        <td>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            {{bytesToSize(item.length)}}
+                        </td>
+                        <td>
+                            {{item.createdDate}}
+                        </td>
+                        <td>
+                            <i class="bi bi-download icon-button" title="Download" role="button"
+                                (click)="download(item)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-end" style="width: 100%;">
+                <i class="bi bi-arrow-down bounce" title="Load More" [hidden]="!loadMoreButton"
+                    (click)="loadMore()"></i>
+            </div>
+        </div>
+    </div>
+</div>

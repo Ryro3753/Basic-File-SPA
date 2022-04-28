@@ -1,0 +1,44 @@
+.upload-table{
+    border: solid 2px gray;
+    height: 70vh;
+    box-shadow: 1px 1px 1px 1px gray;
+    position: relative;
+    overflow-y: auto;
+}
+
+.splash-text{
+    position: absolute;
+    color:gray;
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    z-index: -1;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+}
+
+.splash-overlay{
+    color:gray;
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    z-index: 100000;
+    user-select: none;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.file-name{
+    margin-left: 0.5rem;
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+

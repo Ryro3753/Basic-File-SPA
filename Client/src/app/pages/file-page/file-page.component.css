@@ -1,0 +1,12 @@
+::ng-deep .icon-button{
+    font-size:x-large;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+
+::ng-deep .table-headers{
+    color:gray;
+    font-size:xx-large;
+    user-select: none;
+}

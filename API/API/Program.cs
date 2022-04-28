@@ -12,6 +12,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddBusinessServices();
 builder.Services.AddDbContext();
+builder.Services.AddCorsPolicy();
+builder.Services.AddLoggerService();
 
 var app = builder.Build();
 
@@ -29,5 +31,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseMiddlewares();
+
+app.UseCorsPolicy();
 
 app.Run();

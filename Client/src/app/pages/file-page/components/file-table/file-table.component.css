@@ -1,0 +1,56 @@
+.files-table{
+    border: solid 2px gray;
+    height: 70vh;
+    box-shadow: 1px 1px 1px 1px gray;
+    overflow-y: auto;
+    position: relative;
+}
+
+.type-bar{
+    border-bottom: solid 3px darkgray;
+}
+
+.type-bar .clicked{
+    background-color: darkgray;
+    color: white;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100px;
+    overflow-y: scroll;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 3px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(180,180,180);
+  }
+
+.bounce {
+    position: relative;
+    height:50px;
+    width:50px;
+    animation:bounce 0.8s infinite;
+    font-size: xx-large;
+}
+
+
+@keyframes bounce {
+    0%       { bottom:0px; }
+    15%, 85% { bottom:2.5px; }
+    25%, 75% { bottom:5px; }
+    40%, 60% { bottom:7.5px; }
+    50%      { bottom:10px; }
+    100%     {bottom:0;}
+  }
+
+ .bounce:hover{
+   cursor: pointer;
+ } 

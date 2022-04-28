@@ -6,7 +6,9 @@ namespace Application.Services
     {
         IEnumerable<Files> GetFiles();
         IEnumerable<Files> GetFiles(FetchFileRequest request);
-        Task<Files> InsertFile(Files file, Stream stream);
+        Task<Files> InsertFile(Files file);
         IEnumerable<FileType> GetFilesType();
+        FileContent GetFileContent(Files fileInfo);
+        string GetFilePath(Files fileInfo);
     }
 }
